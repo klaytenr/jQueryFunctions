@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#title1').mouseover(function(){
+                $('#title1').html('Now this is the title!!!!!');
+            });
+            $('#addClass').click(function(){
+                $(this).addClass('red');
+            });
+            $('#title2').dblclick(function(){
+                $(this).hide('slow', function(){
+                    alert('Your title is gone!!!!');
+                })
+            });
+            $('#pp').click(function(){
+                $('#title2').show();
+            })
+            $('#slidetoggle').click(function(){
+                $('#p2').slideToggle('slow');
+            });
+            $('#append').click(function(){
+                $('#footer').append('<p>Well hello there!</p>');
+            })
+            $('#title3').hover(function(){
+                $(this).css('background-color', 'blue');
+            })
+            $('#input').keypress(function(){
+                document.onkeydown=function(e){
+                    console.log('e: ', e);
+                    if(e.keyCode==13){
+                    alert('You entered something!');
+                    }
+                }
+            })
+            $('#img').attr({
+                alt: 'best kitty'
+            });
+        });
+    </script>
+    <style>
+    .red{
+        background-color:red;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1 id="title1">AddClass</h1>
+            <button id="addClass">AddClass</button>
+            <p id="p1">Click the button to add class 'red' to this paragraph.</p>
+            <p id="p4">Move the mouse over the title to change the title.</p>
+            <hr>
+        </div>
+        <div id="body">
+            <h1 id="title2">SlideToggle</h1>
+            <button class="red" id="slidetoggle">SlideToggle</button>
+            <p id="p2">Click the button to slidetoggle a hidden image.</p>
+            <p id="p5">Double click the title to hide it.</p>
+            <p id="pp">Click me to see the title again</p>
+            <hr>
+        </div>
+        <div id="footer"></div>
+        <h1 id="title3">Append</h1>
+        <button class="red" id="append">Append</button>
+        <p id="p3">Click the button to append a new paragraph.</p>
+        <p id="p6">Hover over the title to change its style.-</p>
+        <input type="text" value="Type Something!" id="input">
+        <hr>
+        <img src="pic.png" alt="picture of a cat" id="img">
+    </div>
+</body>
+</html>
